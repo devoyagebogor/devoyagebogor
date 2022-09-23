@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,400&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+body {
+    line-height: 1.8;
+    color: #898fa1;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(rgba(207, 202, 202, 0.5), rgba(225, 241, 243, 0.2));
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #11242a;
+}
+
+.title-sm {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+a {
+    font-weight: 700;
+    transition: all 0.4s ease;
+}
+
+img {
+    width: 100%;
+}
+
+small {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand .nav-logo {
+    width: 70px !important;
+}
+
+.navbar .nav-link {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color : #e93881;
+}
+
+.logo-text {
+    font-size: 12px;
+    text-transform: capitalize;
+    text-decoration: overline dotted;
+    font-weight: 900;
+    color: #fff;
+}
+
+
+#home {
+    background: linear-gradient(rgba(44, 44, 42, 0.623), rgba(73, 65, 54, 0.26)), url('http://localhost/devoyagebogor/assets/img/background/IMG_0647-min1.jpg');
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+}
+
+#home h1 {
+    font-weight: 700;
+}
+
+#home p {
+    max-width: 550px;
+    margin: 5px auto;
+}
+
+.btn {
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius:15px;
+}
+
+.btn-brand {
+    margin-top: 3%;
+    background: #fce60b;
+    color: #11242a;
+}
+
+.btn:first-child:hover, :not(.btn-check)+.btn:hover {
+    background: #aa9c07;
+    color: #11242a;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.section-intro .line-intro {
+    width: 120px;
+    height: 2px;
+    background-color: rgba(17, 0, 36, 0.3);
+    margin: 16px auto 0 auto;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: #002262;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    flex: none;
+}
+
+.promo-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.promo-item img,
+.promo-item .promo-overlay {
+    transition: all 0.4s ease;
+}
+
+.promo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(94, 95, 87, 0.575);
+    display: flex;
+    align-items: flex-end;
+    padding: 50px;
+    opacity: 0;
+}
+
+.promo-overlay h3, 
+.promo-overlay h6 {
+    color: #fff;
+}
+
+.promo-item:hover .promo-overlay {
+    opacity: 1;
+}
+
+.promo-item:hover img {
+    transform: scale(1.1);
+}
+
+.package .icon-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    font-size: 24px;
+}
+
+.great-package {
+    background-color: #002262;
+}
+
+.great-package.even {
+    background-color: #252f4eb6;
+}
+
+.great-package .line-intro {
+    width: 70px;
+    height: 2px;
+    margin: 16px auto;
+    background-color: rgba(161, 190, 216, 0.76);
+}
+
+.great-package .package-collection-img img,
+.great-package .package-collection-img .social-icons {
+    transition: all 0.4s ease;
+}
+
+.great-package .package-collection-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.great-package .package-collection-img .social-icons {
+    width: 100%;
+    height: 60px;
+    background-color: #e93881;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.great-package .package-collection-img .social-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 24px;
+    color: #fff;
+    border-radius: 100px;
+    text-decoration: none;
+    margin-bottom: 4px;
+    margin-left: 4px;
+}
+
+.great-package .package-collection-img .social-icons a:hover {
+    background-color: #fff;
+    color: #e93881;
+}
+
+.great-package:hover .package-collection-img .social-icons {
+    bottom: 0;
+}
+
+.great-package:hover img {
+    transform: translateY(-40px);
+}
+
+#testimoni img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    transition: all 0.4s ease;
+}
+
+#testimoni .nav-pills .nav-link.active {
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(17,234,87,0.2));
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#testimoni .nav-pills .nav-link.active img {
+    transform: scale(1.1);
+}
+
+.review .stars {
+    color: #e93881;
+}
+
+.review p {
+    max-width: 720px;
+    margin: 24px auto;
+    font-style: italic;
+}
+
+#clients img {
+    height: 100%;
+}
+
+form .form-control:focus {
+    box-shadow: none;
+    border-color: #fce60b;
+}
+
+#cta {
+    background-color: #fce60b;
+}
+
+.footer-top {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid rgba(73, 65, 54, 0.26);
+}
+
+footer .footer-links a,
+footer .social-icons a {
+    color: #898fa1;
+}
+
+footer .social-icons a {
+    font-size: 24px;
+}
+
+footer .footer-links a {
+    display: block;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover,
+footer .footer-links a:hover {
+    color: #fce60b;
+}
+
