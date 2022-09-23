@@ -314,3 +314,19 @@ footer .footer-links a:hover {
     color: #fce60b;
 }
 
+.card-group .card {
+    border: none !important;
+}
+
+.card-group .card img {
+    border-radius: 20px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
+
+/* .card {
+    border: none !important;
+} */
