@@ -327,6 +327,11 @@ footer .footer-links a:hover {
     margin-top: 0;
  }
 
-/* .card {
-    border: none !important;
-} */
+.carousel-inner .carousel-item img {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* display: flex; */
+    align-items: center;
+}

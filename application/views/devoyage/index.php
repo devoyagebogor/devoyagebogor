@@ -85,38 +85,84 @@
                 <div class="line-intro"></div>
             </div>
 
-            <div class="card-group">
-                <div class="card">
-                    <img src="<?php echo base_url('assets/img/top promo/9-min.jpg') ?>" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Parade Ticket</h5>
-                        <p class="card-text">Pelanggan mendapatkan paket makanan di Deresto dan Ticket Devoyage hanya dengan 65K.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Devoyage Bogor X Deresto Coffee & Kitchen</small>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="<?php echo base_url('assets/img/top promo/5.jpg') ?>" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Nutella new menu</h5>
-                        <p class="card-text">Ada Menu Baru dari Deresto, Nutella Coffee Milkshake dengan Soda.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Deresto Coffee & Kitchen</small>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="<?php echo base_url('assets/img/top promo/7-min.jpg') ?>" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Terusan Games</h5>
-                        <p class="card-text">Untuk 2 Orang, pelanggan sudah mendapatkan fasilitas di Devoyage dan Rumah Air Bogor</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Devoyage Bogor X Rumah Air Bogor</small>
+            <div class="row gy-4">
+
+                <div class="col-lg-5 offset-lg-1 col-md-4 offset-md-2">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
                     </div>
                 </div>
+                <div class="col-lg-5 offset-lg-1 col-md-4 offset-md-2">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 col-md-4 offset-md-2">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 col-md-4 offset-md-2">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+
         </div>
     </div>
 </section>
