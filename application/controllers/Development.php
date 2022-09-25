@@ -19,7 +19,7 @@ class Development extends CI_Controller
 		check_log_devs();
 		if ($this->form_validation->run() == FALSE) {
 
-			$data['title'] = 'Developmnet Web';
+			$data['title'] = 'Login | Development';
 			$this->load->view('templates/dev/header', $data);
 			$this->load->view('development/index', $data);
 			$this->load->view('templates/dev/footer');
@@ -34,7 +34,7 @@ class Development extends CI_Controller
 		cek_reg_development();
 		if ($this->form_validation->run() == FALSE) {
 
-			$data['title'] = 'Developmnet Web';
+			$data['title'] = 'Register | Development';
 			$this->load->view('templates/dev/header', $data);
 			$this->load->view('development/register_development', $data);
 			$this->load->view('templates/dev/footer');
@@ -48,7 +48,7 @@ class Development extends CI_Controller
 
 	public function project_web_devs_app()
 	{
-		$data['title'] = 'Developmnet Web';
+		$data['title'] = 'Apps';
 		$this->load->view('templates/app/header_app', $data);
 		$this->load->view('development/app', $data);
 		$this->load->view('templates/app/footer_app');
@@ -56,7 +56,7 @@ class Development extends CI_Controller
 
 	public function project_web_devs_review()
 	{
-		$data['title'] = 'Developmnet Web';
+		$data['title'] = 'Review Project';
 		$this->load->view('templates/app/header_app', $data);
 		$this->load->view('development/review', $data);
 		$this->load->view('templates/app/footer_app');
