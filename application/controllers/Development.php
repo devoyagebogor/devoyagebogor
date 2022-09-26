@@ -48,15 +48,33 @@ class Development extends CI_Controller
 
 	public function project_web_devs_app()
 	{
-		$data['title'] = 'Apps';
+		$data['title'] = 'Web Application';
+		// $data['promo_byID'] = $this->devweb->get_promoById();
 		$this->load->view('templates/app/header_app', $data);
 		$this->load->view('development/app', $data);
 		$this->load->view('templates/app/footer_app');
 	}
 
+	public function dev_promo()
+	{
+		cek_add_product_promo();
+		if ($this->form_validation->run() == FALSE) {
+			$data['title'] = 'Web Application';
+			$this->load->view('templates/app/header_app', $data);
+			$this->load->view('development/app', $data);
+			$this->load->view('templates/app/footer_app');
+		} else {
+
+			$this->devweb->add_apps_for_promo();
+			$this->session->set_flashdata('dev', '<div class="alert alert-success alert-dismissible fade show" role="alert"> <strong>Add New Promo Success!</strong> You Can Show This Promo From the Landing Web Page. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+			redirect('development/project_web_devs_review');
+		}
+	}
+
 	public function project_web_devs_review()
 	{
 		$data['title'] = 'Review Project';
+		$data['view_promo'] = $this->devweb->show_promo();
 		$this->load->view('templates/app/header_app', $data);
 		$this->load->view('development/review', $data);
 		$this->load->view('templates/app/footer_app');

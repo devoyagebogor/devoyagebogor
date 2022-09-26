@@ -43,7 +43,7 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Promo</a>
+                            <a class="nav-link" href="<?= base_url('development/project_web_devs_review'); ?>">Promo</a>
                             <a class="nav-link" href="layout-sidenav-light.html">Packages</a>
                             <a class="nav-link" href="layout-sidenav-light.html">Gallery</a>
                         </nav>
@@ -105,74 +105,69 @@
                     <li class="breadcrumb-item active">Devoyage Bogor - Deresto Coffee & Kitchen</li>
                 </ol>
 
+                <div class="row">
+                    <div class="col-auto">
+                        <small>
+                            <?= $this->session->flashdata('dev'); ?>
+                        </small>
+                    </div>
+                </div>
+
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
                         DataTable Example
                     </div>
                     <div class="card-body">
-                        <table id="datatablesSimple">
+                        <table id="datatablesSimple" class="">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>No</th>
+                                    <th>Images</th>
+                                    <th>Title</th>
+                                    <th>Caption</th>
+                                    <th>Text</th>
+                                    <th>Date</th>
+                                    <th>Option</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>No</th>
+                                    <th>Images</th>
+                                    <th>Title</th>
+                                    <th>Caption</th>
+                                    <th>Text</th>
+                                    <th>Date</th>
+                                    <th>Option</th>
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011/07/25</td>
-                                    <td>$170,750</td>
-                                </tr>
-                                <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    <td>2009/01/12</td>
-                                    <td>$86,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Cedric Kelly</td>
-                                    <td>Senior Javascript Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>2012/03/29</td>
-                                    <td>$433,060</td>
-                                </tr>
-                                <tr>
-                                    <td>Airi Satou</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>33</td>
-                                    <td>2008/11/28</td>
-                                    <td>$162,700</td>
-                                </tr>
+                                <?php $no = 1;
+                                foreach ($view_promo as $result) : ?>
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td>
+                                            <img src="<?= base_url('assets/img/uploaded/promo/')  .  $result['poto']; ?>" alt="img-devoyage" style="height: 100px; width= auto;" class="rounded mx-auto d-block">
+                                        </td>
+                                        <td><?= $result['title']; ?></td>
+                                        <td><?= $result['caption']; ?></td>
+                                        <td><?= $result['paragraph']; ?></td>
+                                        <?php $now = $result['date'];
+                                        $tg = date('d M Y', $now); ?>
+                                        <td><?= $tg; ?></td>
+                                        <td class="btn-group-vertical gap-2 d-grid">
+                                            <a href="" class="btn btn-warning">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                            <a href="" class="btn btn-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
