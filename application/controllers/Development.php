@@ -51,6 +51,7 @@ class Development extends CI_Controller
 		$data['title'] = 'Web Application';
 		// $data['promo_byID'] = $this->devweb->get_promoById();
 		$this->load->view('templates/app/header_app', $data);
+		$this->load->view('templates/app/sidebar_app');
 		$this->load->view('development/app', $data);
 		$this->load->view('templates/app/footer_app');
 	}
@@ -61,6 +62,7 @@ class Development extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$data['title'] = 'Web Application';
 			$this->load->view('templates/app/header_app', $data);
+			$this->load->view('templates/app/sidebar_app');
 			$this->load->view('development/app', $data);
 			$this->load->view('templates/app/footer_app');
 		} else {
@@ -76,6 +78,7 @@ class Development extends CI_Controller
 		$data['title'] = 'Review Project';
 		$data['view_promo'] = $this->devweb->show_promo();
 		$this->load->view('templates/app/header_app', $data);
+		$this->load->view('templates/app/sidebar_app');
 		$this->load->view('development/review', $data);
 		$this->load->view('templates/app/footer_app');
 	}
@@ -87,6 +90,7 @@ class Development extends CI_Controller
 			$data['title'] = 'Review Project';
 			$data['view_promo'] = $this->devweb->get_promoById($id);
 			$this->load->view('templates/app/header_app', $data);
+			$this->load->view('templates/app/sidebar_app');
 			$this->load->view('development/review', $data);
 			$this->load->view('templates/app/footer_app');
 		} else {
