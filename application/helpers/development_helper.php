@@ -34,7 +34,7 @@ function process_reg_development()
 				$session_dev = [
 					'id'		 => $dev['id'],
 					'email' 	 => $dev['email'],
-					'passwordss' => $dev['password']
+					'password' => $dev['password']
 				];
 				ci()->session->set_userdata($session_dev);
 				redirect('development/project_web_devs_app');
@@ -52,6 +52,16 @@ function process_reg_development()
 
 		ci()->session->set_flashdata('dev', '<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Account Not Found!</strong> This Account Not Registered<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
 		redirect('development');
+	}
+}
+
+function _in_System()
+{
+	if (!ci()->session->userdata('id')) {
+		ci()->session->set_flashdata('dev', '<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Limited Access!</strong> Only Authorized Operators<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+		redirect('development');
+	} else {
+		return true;
 	}
 }
 

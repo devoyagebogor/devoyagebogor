@@ -48,6 +48,7 @@ class Development extends CI_Controller
 
 	public function project_web_devs_app()
 	{
+		_in_System();
 		$data['title'] = 'Web Application';
 		// $data['promo_byID'] = $this->devweb->get_promoById();
 		$this->load->view('templates/app/header_app', $data);
@@ -58,6 +59,7 @@ class Development extends CI_Controller
 
 	public function dev_promo()
 	{
+		_in_System();
 		cek_add_product_promo();
 		if ($this->form_validation->run() == FALSE) {
 			$data['title'] = 'Web Application';
@@ -75,6 +77,7 @@ class Development extends CI_Controller
 
 	public function project_web_devs_review()
 	{
+		_in_System();
 		$data['title'] = 'Review Project';
 		$data['view_promo'] = $this->devweb->show_promo();
 		$this->load->view('templates/app/header_app', $data);
@@ -85,6 +88,7 @@ class Development extends CI_Controller
 
 	public function projcet_update_promo($id)
 	{
+		_in_System();
 		cek_add_product_promo();
 		if ($this->form_validation->run() == FALSE) {
 			$data['title'] = 'Review Project';
@@ -101,6 +105,7 @@ class Development extends CI_Controller
 	}
 	public function d_Dpromo($id)
 	{
+		_in_System();
 		$this->devweb->d_app_promo($id);
 		$this->session->set_flashdata('dev', '<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Delete Promo Success!</strong> You Can Add the new Hot Promo Again. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
 		redirect('development/project_web_devs_review');
@@ -108,9 +113,10 @@ class Development extends CI_Controller
 
 	public function shows($id)
 	{
-		_updatePromoImg($id);
-		var_dump(_updatePromoImg($id));
-		die;
+		// demo
+		// _updatePromoImg($id);
+		// var_dump(_updatePromoImg($id));
+		// die;
 	}
 
 	public function logout_devs_web()
