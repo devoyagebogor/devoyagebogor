@@ -102,6 +102,14 @@ function _updatePromoImg()
 	return $update_ImgPromo;
 }
 
+function d_promoImg()
+{
+	$id    = ci()->uri->segment(3);
+	$file_ = ci()->db->get_where('promo', ['id' => $id])->row_array();
+	$f_d   = $file_['poto'];
+	unlink(FCPATH . '/assets/img/uploaded/promo/' . $f_d);
+}
+
 function cek_add_product_promo()
 {
 	ci()->form_validation->set_rules('title_promo', 'Title Promo', 'trim|required');

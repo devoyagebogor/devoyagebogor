@@ -73,4 +73,11 @@ class Devweb_model extends CI_Model
 		];
 		return $this->db->update('promo', $data, ['id' => $id['id']]);
 	}
+
+	public function d_app_promo($id)
+	{
+		$id = $this->get_promoById($id);
+		d_promoImg();
+		return  $this->db->delete('promo', ['id' => $id['id']]);
+	}
 }

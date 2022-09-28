@@ -95,6 +95,12 @@ class Development extends CI_Controller
 			redirect('development/project_web_devs_review');
 		}
 	}
+	public function d_Dpromo($id)
+	{
+		$this->devweb->d_app_promo($id);
+		$this->session->set_flashdata('dev', '<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Delete Promo Success!</strong> You Can Add the new Hot Promo Again. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+		redirect('development/project_web_devs_review');
+	}
 
 	public function shows($id)
 	{
