@@ -60,5 +60,17 @@ class Devweb_model extends CI_Model
 	public function update_this_promo($id)
 	{
 		$id = $this->get_promoById($id);
+		$data = [
+
+			'title'			=> $this->input->post('title_promo', true),
+			'paragraph'		=> $this->input->post('text_promo', true),
+			'caption'		=> $this->input->post('caption_promo', true),
+			'periode'		=> $this->input->post('periode_promo', true),
+			'status'		=> 1, // rever to active ==> 0 rever to non-active
+			'poto'			=> _updatePromoImg(),
+			'date'			=> time()
+
+		];
+		return $this->db->update('promo', $data, ['id' => $id['id']]);
 	}
 }

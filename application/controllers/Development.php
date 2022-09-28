@@ -80,6 +80,29 @@ class Development extends CI_Controller
 		$this->load->view('templates/app/footer_app');
 	}
 
+	public function projcet_update_promo($id)
+	{
+		cek_add_product_promo();
+		if ($this->form_validation->run() == FALSE) {
+			$data['title'] = 'Review Project';
+			$data['view_promo'] = $this->devweb->get_promoById($id);
+			$this->load->view('templates/app/header_app', $data);
+			$this->load->view('development/review', $data);
+			$this->load->view('templates/app/footer_app');
+		} else {
+			$this->devweb->update_this_promo($id);
+			$this->session->set_flashdata('dev', '<div class="alert alert-warning alert-dismissible fade show" role="alert"> <strong>Update Promo Success!</strong> You Can Show This Promo From the Landing Web Page. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+			redirect('development/project_web_devs_review');
+		}
+	}
+
+	public function shows($id)
+	{
+		_updatePromoImg($id);
+		var_dump(_updatePromoImg($id));
+		die;
+	}
+
 	public function logout_devs_web()
 	{
 		$this->session->unset_userdata('id');

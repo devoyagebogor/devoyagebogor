@@ -74,9 +74,38 @@ function _promoImg()
 	return $img;
 }
 
+function _updatePromoImg()
+{
+	$id    = ci()->uri->segment(3);
+	$file_ = ci()->db->get_where('promo', ['id' => $id])->row_array();
+	$old_ImgPromo  = $file_['poto'];
+
+	$config['allowed_types'] = 'jpg|jpeg|png';
+	$config['upload_path']	 = './assets/img/uploaded/promo/';
+	$config['max_size']		 = 2098;
+
+	ci()->load->library('upload', $config);
+
+	if (!empty(FCPATH . '/assets/img/uploaded/promo/' . $old_ImgPromo)) {
+		if (ci()->upload->do_upload('img_promo')) {
+			unlink(FCPATH . '/assets/img/uploaded/promo/' . $old_ImgPromo);
+			$update_ = ci()->upload->data();
+			$update_ImgPromo = $update_['file_name'];
+		} else {
+			$update_ImgPromo = $old_ImgPromo;
+		}
+	} else {
+		$update_ = ci()->upload->data();
+		$update_ImgPromo = $update_['file_name'];
+	}
+
+	return $update_ImgPromo;
+}
+
 function cek_add_product_promo()
 {
 	ci()->form_validation->set_rules('title_promo', 'Title Promo', 'trim|required');
 	ci()->form_validation->set_rules('caption_promo', 'Caption', 'trim|required');
 	ci()->form_validation->set_rules('text_promo', 'Text Promo', 'trim|required');
+	ci()->form_validation->set_rules('periode_promo', 'Periode Promo', 'trim|required');
 }
