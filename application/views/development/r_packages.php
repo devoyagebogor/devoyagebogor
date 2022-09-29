@@ -47,26 +47,65 @@
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td>
-                                        <img src="<?= base_url('assets/img/uploaded/packages/')  .  $package['img_package']; ?>" alt="img-devoyage" style="height: 100px; width= auto;" class="rounded mx-auto d-block">
+                                        <img src="<?= base_url('assets/img/uploaded/packages/')  .  $package->img_package; ?>" alt="img-devoyage" style="height: 100px; width= auto;" class="rounded mx-auto d-block">
                                     </td>
-                                    <td><?= $package['title_package']; ?></td>
-                                    <td><?= $package['caption_package']; ?></td>
-                                    <?php $now = $package['date_created'];
+                                    <td><?= $package->title_package; ?></td>
+                                    <td><?= $package->caption_package; ?></td>
+                                    <?php $now = $package->date_created;
                                     $tg = date('d M Y', $now); ?>
                                     <td><?= $tg; ?></td>
                                     <td class="btn-group-vertical gap-2 d-grid">
 
-                                        <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editThisPromo<?= $package['id']; ?>">
+                                        <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editThisPackage<?= $package->id; ?>">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
-                                        <a href="<?= base_url('development/d_Dpromo/' . $package['id']) ?>" class="btn btn-danger" onclick="return confirm('Delete Promo ?')">
+                                        <a href="<?= base_url('development/d_Dpromo/' . $package->id) ?>" class="btn btn-danger" onclick="return confirm('Delete Promo ?')">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
                                             </svg>
                                         </a>
                                     </td>
                                 </tr>
-
+                                <!-- Modal -->
+                                <div class="modal fade" id="editThisPackage<?= $package->id; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">Update Package ?</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="card">
+                                                    <h5 class="card-header">Edit Packages Devoyage</h5>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Today is The Best Day</h5>
+                                                        <?= form_open_multipart('development/projcet_update_packages/' . $package->id); ?>
+                                                        <div class="mb-3">
+                                                            <label for="inputTitle" class="form-label">Title Package</label>
+                                                            <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" name="title_package" value="<?= $package->title_package; ?>">
+                                                            <div id="titleHelp" class="form-text">Add the Title for Visitors Web</div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="captionPackage" class="form-label">Caption Package</label>
+                                                            <input type="text" class="form-control" id="captionPackage" name="caption_package" value="<?= $package->caption_package; ?>">
+                                                        </div>
+                                                        <div class="mb-3 form-check">
+                                                            <label class="form-label" for="filePicturePackage">Change Picture Pacakage</label>
+                                                            <input type="file" class="form-control" id="filePicturePackage" name="img_package">
+                                                        </div>
+                                                        <div class="d-grid mt-2 mb-2">
+                                                            <button type="submit" class="btn btn-primary">Sava Package ?</button>
+                                                        </div>
+                                                        <?= form_close(); ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <?php endforeach; ?>
                         </tbody>
                     </table>

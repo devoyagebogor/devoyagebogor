@@ -98,3 +98,31 @@ function _packagesImg()
 
 	return $img;
 }
+
+function _updatePackagesImg()
+{
+	$id    = ci()->uri->segment(3);
+	$file_ = ci()->db->get_where('packages', ['id' => $id])->row();
+	$old_ImgPackages  = $file_->img_package;
+
+	$config['allowed_types'] = 'jpg|jpeg|png';
+	$config['upload_path']	 = './assets/img/uploaded/packages/';
+	$config['max_size']		 = 2098;
+
+	ci()->load->library('upload', $config);
+
+	if (!empty(FCPATH . '/assets/img/uploaded/packages/' . $old_ImgPackages)) {
+		if (ci()->upload->do_upload('img_package')) {
+			unlink(FCPATH . '/assets/img/uploaded/packages/' . $old_ImgPackages);
+			$update_ = ci()->upload->data();
+			$update_ImgPackages = $update_['file_name'];
+		} else {
+			$update_ImgPackages = $old_ImgPackages;
+		}
+	} else {
+		$update_ = ci()->upload->data();
+		$update_ImgPackages = $update_['file_name'];
+	}
+
+	return $update_ImgPackages;
+}

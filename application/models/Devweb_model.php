@@ -65,9 +65,9 @@ class Devweb_model extends CI_Model
 			'paragraph'		=> $this->input->post('text_promo', true),
 			'caption'		=> $this->input->post('caption_promo', true),
 			'periode'		=> $this->input->post('periode_promo', true),
-			'status'		=> 1, // rever to active ==> 0 rever to non-active
+			// 'status'		=> 1, // rever to active ==> 0 rever to non-active
 			'poto'			=> _updatePromoImg(),
-			'date'			=> time()
+			// 'date'			=> time()
 
 		];
 		return $this->db->update('promo', $data, ['id' => $id['id']]);
@@ -102,5 +102,24 @@ class Devweb_model extends CI_Model
 	public function show_packages_dev()
 	{
 		return $this->db->get('packages')->result_array();
+	}
+
+	public function get_PackagesByID($id)
+	{
+		return $this->db->get_where('packages', ['id' => $id])->result_object();
+		// For use Object Method you can fetch DB use ->result 
+	}
+
+	public function update_this_packages($id)
+	{
+		$Packages = new Devweb_model;
+		$id_ = $Packages->get_PackagesByID($id)->id;
+
+		$data = [
+			'title_package'		=> $this->input->post('title_package', true),
+			'caption_package'	=> $this->input->post('caption_package', true),
+			'img_package'		=> _updatePackagesImg(),
+		];
+		return $this->db->update('packages', $data, ['id' => $id_]);
 	}
 }
