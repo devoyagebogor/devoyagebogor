@@ -80,4 +80,14 @@ class Devweb_model extends CI_Model
 		d_promoImg();
 		return  $this->db->delete('promo', ['id' => $id['id']]);
 	}
+
+	// Packages Model
+	public function add_apps_for_packages()
+	{
+		$data = [
+			'title_package'		=> $this->input->post('title_package', true),
+			'caption_package'	=> $this->input->post('caption_package', true),
+			'img_package'		=> _packagesImg()
+		];
+	}
 }

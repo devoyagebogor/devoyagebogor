@@ -20,7 +20,7 @@
                 <li>
                     <hr class="dropdown-divider" />
                 </li>
-                <li><a class="dropdown-item" href="<?= base_url('development/logout_devs_web') ?>">Logout</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('authdevs/logout_devs_web') ?>">Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -84,7 +84,7 @@
                     </a>
 
                     <div class="sb-sidenav-menu-heading">Sign Out</div>
-                    <a class="nav-link" href="<?= base_url('development/logout_devs_web'); ?>">
+                    <a class="nav-link" href="<?= base_url('authdevs/logout_devs_web'); ?>">
                         <div class="sb-nav-link-icon"><i class="bi bi-box-arrow-in-left"></i></div>
                         Logout
                     </a>

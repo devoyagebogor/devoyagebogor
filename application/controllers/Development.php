@@ -12,40 +12,10 @@ class Development extends CI_Controller
 		parent::__construct();
 		$this->load->model('Devweb_model', 'devweb');
 		$this->load->helper('development_helper');
+		$this->load->helper('system_request_helper');
 	}
 
-	public function index()
-	{
-		check_log_devs();
-		if ($this->form_validation->run() == FALSE) {
-
-			$data['title'] = 'Login | Development';
-			$this->load->view('templates/dev/header', $data);
-			$this->load->view('development/index', $data);
-			$this->load->view('templates/dev/footer');
-		} else {
-
-			process_reg_development();
-		}
-	}
-
-	public function register_of_development()
-	{
-		cek_reg_development();
-		if ($this->form_validation->run() == FALSE) {
-
-			$data['title'] = 'Register | Development';
-			$this->load->view('templates/dev/header', $data);
-			$this->load->view('development/register_development', $data);
-			$this->load->view('templates/dev/footer');
-		} else {
-
-			$this->devweb->register_of_development_account();
-			$this->session->set_flashdata('dev', '<div class="alert alert-success alert-dismissible fade show" role="alert"> <strong>Account Register Success!</strong> You Can Develops Web Devoyage Bogor - Deresto Coffee & Kitchen <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
-			redirect('development');
-		}
-	}
-
+	# Manage Menu to Product
 	public function project_web_devs_app()
 	{
 		_in_System();
@@ -57,6 +27,18 @@ class Development extends CI_Controller
 		$this->load->view('templates/app/footer_app');
 	}
 
+	/*
+		Set Up Promo's 			==>> DONE
+		Set Up Packages			==>> PENDING
+		Set Up Gallery's		==>> ...
+		Set Up Testimonial's	==>> ...
+		Set Up Service			==>> ...
+		Set Up Facilites		==>> ...
+		Set Up Contact (Opsional)
+		Set Up Addres  (Opsional)
+	*/
+
+	# Add Product Promo
 	public function dev_promo()
 	{
 		_in_System();
@@ -75,6 +57,7 @@ class Development extends CI_Controller
 		}
 	}
 
+	# To Review Product Promo, can be develope update or delete
 	public function project_web_devs_review()
 	{
 		_in_System();
@@ -86,6 +69,7 @@ class Development extends CI_Controller
 		$this->load->view('templates/app/footer_app');
 	}
 
+	# Update Promo
 	public function projcet_update_promo($id)
 	{
 		_in_System();
@@ -103,6 +87,8 @@ class Development extends CI_Controller
 			redirect('development/project_web_devs_review');
 		}
 	}
+
+	# Delete Promo
 	public function d_Dpromo($id)
 	{
 		_in_System();
@@ -111,20 +97,9 @@ class Development extends CI_Controller
 		redirect('development/project_web_devs_review');
 	}
 
-	public function shows($id)
+	# Add Packages
+	public function dev_packages(Type $var = null)
 	{
-		// demo
-		// _updatePromoImg($id);
-		// var_dump(_updatePromoImg($id));
-		// die;
-	}
-
-	public function logout_devs_web()
-	{
-		$this->session->unset_userdata('id');
-		$this->session->unset_userdata('email');
-		$this->session->unset_userdata('password');
-		$this->session->set_flashdata('dev', '<div class="alert alert-secondary alert-dismissible fade show" role="alert"> <strong>Account Logout Success!</strong> Good Luck For To Day, See You Tomorrow<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
-		redirect('development');
+		# code...
 	}
 }

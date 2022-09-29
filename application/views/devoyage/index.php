@@ -87,8 +87,8 @@
 
             <div class="row gy-4">
                 <?php foreach ($hotspromo as $promo) : ?>
-                    <div class="col-lg-5 offset-lg-1 col-md-4 offset-md-2">
-                        <div class="card" style="width: 18rem;">
+                    <div class="col-lg-4 offset-lg-0 col-md-4 offset-md-2">
+                        <div class="card text-center" style="width: 18rem;">
                             <img src="<?= base_url('assets/img/uploaded/promo/') . $promo['poto']; ?>" class="card-img-top" alt="hotspromo">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $promo['title']; ?></h5>

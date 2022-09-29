@@ -1,4 +1,4 @@
-        <!-- Modal -->
+        <!-- Modal Hot Promo-->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-lg-4 offset-lg-1">
                                 <label for="textpromo" class="form-label"><span class="fw-bold">Text Promo</span></label>
-                                <textarea name="text_promo" id="textpromo" cols="5" rows="2" class="form-control"></textarea>
+                                <textarea name="text_promo" id="text_promo" cols="5" rows="2" class="form-control"></textarea>
                                 <span><small class="text-danger">*required</small></span>
 
                             </div>
@@ -42,6 +42,47 @@
 
                     <div class="input-group mb-3">
 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Packages -->
+        <div class="modal fade" id="staticBackdropPackages" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Packages +</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <h5 class="card-header">Add Packages Devoyage</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">Today is THe Best Day</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="inputTitle" class="form-label">Title Package</label>
+                                        <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" name="title_package">
+                                        <div id="titleHelp" class="form-text">Add the Title for Visitors Web</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="captionPackage" class="form-label">Caption Package</label>
+                                        <input type="text" class="form-control" id="captionPackage" name="caption_package">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <label class="form-label" for="filePicturePackage">Add Picture Pacakage</label>
+                                        <input type="file" class="form-control" id="filePicturePackage" name="img_packages">
+                                    </div>
+                                    <div class="d-grid mt-2 mb-2">
+                                        <button type="submit" class="btn btn-primary">Add Package +</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
