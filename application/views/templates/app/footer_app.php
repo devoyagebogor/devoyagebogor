@@ -63,24 +63,24 @@
                             <h5 class="card-header">Add Packages Devoyage</h5>
                             <div class="card-body">
                                 <h5 class="card-title">Today is THe Best Day</h5>
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="inputTitle" class="form-label">Title Package</label>
-                                        <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" name="title_package">
-                                        <div id="titleHelp" class="form-text">Add the Title for Visitors Web</div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="captionPackage" class="form-label">Caption Package</label>
-                                        <input type="text" class="form-control" id="captionPackage" name="caption_package">
-                                    </div>
-                                    <div class="mb-3 form-check">
-                                        <label class="form-label" for="filePicturePackage">Add Picture Pacakage</label>
-                                        <input type="file" class="form-control" id="filePicturePackage" name="img_packages">
-                                    </div>
-                                    <div class="d-grid mt-2 mb-2">
-                                        <button type="submit" class="btn btn-primary">Add Package +</button>
-                                    </div>
-                                </form>
+                                <?= form_open_multipart('development/dev_packages'); ?>
+                                <div class="mb-3">
+                                    <label for="inputTitle" class="form-label">Title Package</label>
+                                    <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" name="title_package">
+                                    <div id="titleHelp" class="form-text">Add the Title for Visitors Web</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="captionPackage" class="form-label">Caption Package</label>
+                                    <input type="text" class="form-control" id="captionPackage" name="caption_package">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <label class="form-label" for="filePicturePackage">Add Picture Pacakage</label>
+                                    <input type="file" class="form-control" id="filePicturePackage" name="img_package">
+                                </div>
+                                <div class="d-grid mt-2 mb-2">
+                                    <button type="submit" class="btn btn-primary">Add Package +</button>
+                                </div>
+                                <?= form_close(); ?>
                             </div>
                         </div>
                     </div>

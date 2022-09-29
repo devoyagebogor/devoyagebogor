@@ -71,6 +71,12 @@ function cek_add_product_promo()
 
 // Packages
 
+function cek_add_product_packages()
+{
+	ci()->form_validation->set_rules('title_package', 'Title Package', 'trim|required|max_length[25]');
+	ci()->form_validation->set_rules('caption_package', 'Caption Promo', 'trim|required|max_length[50]');
+}
+
 function _packagesImg()
 {
 	$config['allowed_types'] = 'jpg|jpeg|png';
@@ -79,8 +85,11 @@ function _packagesImg()
 
 	ci()->load->library('upload', $config);
 
-	if (!ci()->upload->do_upload('img_packages')) {
+	if (!ci()->upload->do_upload('img_package')) {
 		ci()->session->set_flashdata('dev', '<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Failed!</strong> Images not to Insert, try again<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+		$errors = ['error' => ci()->upload->display_errors()];
+		var_dump($errors);
+		die;
 		redirect('development/project_web_devs_app');
 	} else {
 		$img = ci()->upload->data();

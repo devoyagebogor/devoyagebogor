@@ -123,42 +123,21 @@
         <div class="line-intro"></div>
     </div>
 
-    <div class="col-lg-4 col-sm-6">
-        <div class="promo-item">
+    <?php foreach ($packages as $ps) : ?>
+        <div class="col-lg-4 col-sm-6">
+            <div class="promo-item">
 
-            <img src="<?php echo base_url('assets/img/promo/unknown_295581535_119536060817635_3025769294510725065_n.jpg'); ?>" alt="img-promo">
-            <div class="promo-overlay">
-                <div>
-                    <h3>Nutella Coffee</h3>
-                    <h6>Menu Baru dari Deresto. Siap memanjakan lidah kamu</h6>
+                <img src="<?php echo base_url('assets/img/uploaded/packages/' . $ps->img_package); ?>" alt="img-promo">
+                <div class="promo-overlay">
+                    <div>
+                        <h3><?= $ps->title_package; ?></h3>
+                        <h6><?= $ps->caption_package; ?></h6>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-4 col-sm-6">
-        <div class="promo-item">
+    <?php endforeach; ?>
 
-            <img src="<?php echo base_url('assets/img/promo/unknown_292832580_1085497722068682_8522624660353187764_n.jpg'); ?>" alt="img-promo">
-            <div class="promo-overlay">
-                <div>
-                    <h3>Gathering Hemat</h3>
-                    <h6>Paket Gathering. Full Services</h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-sm-6">
-        <div class="promo-item">
-
-            <img src="<?php echo base_url('assets/img/promo/unknown_290762419_481156860441236_5075265774725336646_n.jpg'); ?>" alt="img-promo">
-            <div class="promo-overlay">
-                <div>
-                    <h3>yearbook </h3>
-                    <h6>Khusus buat ini, ada potongan Harga Ticket Devoyage sebesar 50%</h6>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 <section id="package" class="row g-0 py-0 text-center">

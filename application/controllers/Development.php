@@ -98,8 +98,32 @@ class Development extends CI_Controller
 	}
 
 	# Add Packages
-	public function dev_packages(Type $var = null)
+	public function dev_packages()
 	{
-		# code...
+		_in_System();
+		cek_add_product_packages();
+		if ($this->form_validation->run() == FALSE) {
+			$data['title'] = 'Web Application';
+			$this->load->view('templates/app/header_app', $data);
+			$this->load->view('templates/app/sidebar_app');
+			$this->load->view('development/app', $data);
+			$this->load->view('templates/app/footer_app');
+		} else {
+			$this->devweb->add_apps_for_packages();
+			$this->session->set_flashdata('dev', '<div class="alert alert-success alert-dismissible fade show" role="alert"> <strong>Add New Package Success!</strong> You Can Show This Packages From the Landing Web Page. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+			redirect('development/project_web_devs_packages');
+		}
+	}
+
+	# To Review Product Promo, can be develope update or delete
+	public function project_web_devs_packages()
+	{
+		_in_System();
+		$data['title'] = 'Review Project';
+		$data['view_packages'] = $this->devweb->show_packages_dev();
+		$this->load->view('templates/app/header_app', $data);
+		$this->load->view('templates/app/sidebar_app');
+		$this->load->view('development/r_packages', $data);
+		$this->load->view('templates/app/footer_app');
 	}
 }

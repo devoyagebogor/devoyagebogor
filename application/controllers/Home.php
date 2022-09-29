@@ -16,6 +16,8 @@ class Home extends CI_Controller
 	{
 		$data['title'] = 'Devoyage Bogor';
 		$data['hotspromo'] = $this->devweb->show_promo();
+		$Packges = new Devweb_model;
+		$data['packages'] = $Packges->show_packages();
 		$this->load->view('templates/header', $data);
 		$this->load->view('devoyage/index', $data);
 		$this->load->view('templates/footer');

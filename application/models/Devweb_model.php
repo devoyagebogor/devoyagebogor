@@ -10,6 +10,7 @@ class Devweb_model extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('development_helper');
 	}
 
 	public function register_of_development_account()
@@ -26,8 +27,6 @@ class Devweb_model extends CI_Model
 
 	public function add_apps_for_promo()
 	{
-		$this->load->helper('development_helper');
-
 		$data = [
 
 			'title'			=> $this->input->post('title_promo', true),
@@ -87,7 +86,21 @@ class Devweb_model extends CI_Model
 		$data = [
 			'title_package'		=> $this->input->post('title_package', true),
 			'caption_package'	=> $this->input->post('caption_package', true),
-			'img_package'		=> _packagesImg()
+			'img_package'		=> _packagesImg(),
+			'status'			=> 1,
+			'date_created'		=> time()
 		];
+		$this->db->insert('packages', $data);
+	}
+
+	// Show Packages 
+	public function show_packages()
+	{
+		return $this->db->get('packages')->result();
+	}
+
+	public function show_packages_dev()
+	{
+		return $this->db->get('packages')->result_array();
 	}
 }
