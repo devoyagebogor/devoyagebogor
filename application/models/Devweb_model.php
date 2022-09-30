@@ -106,7 +106,7 @@ class Devweb_model extends CI_Model
 
 	public function get_PackagesByID($id)
 	{
-		return $this->db->get_where('packages', ['id' => $id])->result_object();
+		return $this->db->get_where('packages', ['id' => $id])->row();
 		// For use Object Method you can fetch DB use ->result 
 	}
 
@@ -121,5 +121,13 @@ class Devweb_model extends CI_Model
 			'img_package'		=> _updatePackagesImg(),
 		];
 		return $this->db->update('packages', $data, ['id' => $id_]);
+	}
+
+	public function d_app_package($id)
+	{
+		$Packages = new Devweb_model;
+		$id_D	  = $Packages->get_PackagesByID($id)->id;
+		d_packagesImg();
+		return $this->db->delete('packages', ['id' => $id_D]);
 	}
 }

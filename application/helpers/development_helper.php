@@ -126,3 +126,11 @@ function _updatePackagesImg()
 
 	return $update_ImgPackages;
 }
+
+function d_packagesImg()
+{
+	$th_id = ci()->uri->segment(3);
+	$Packages = ci()->db->get_where('packages', ['id' => $th_id])->row();
+	$Packages_f = $Packages->img_package;
+	unlink(FCPATH . '/assets/img/uploaded/packages/' . $Packages_f);
+}

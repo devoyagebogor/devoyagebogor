@@ -152,4 +152,13 @@ class Development extends CI_Controller
 			redirect('development/project_web_devs_packages');
 		}
 	}
+
+	public function d_Dpackages($id)
+	{
+		_in_System();
+		$Packages_D = new Devweb_model;
+		$Packages_D->d_app_package($id);
+		$this->session->set_flashdata('dev', '<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Delete Packages Success!</strong> You Can Add the new Package Again. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+		redirect('development/project_web_devs_packages');
+	}
 }
