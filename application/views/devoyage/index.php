@@ -85,17 +85,31 @@
                 <div class="line-intro"></div>
             </div>
 
-            <div class="row gy-4">
+            <div class="row gy-3">
                 <?php foreach ($hotspromo as $promo) : ?>
-                    <div class="col-lg-4 offset-lg-0 col-md-4 offset-md-2">
-                        <div class="card text-center" style="width: 18rem;">
-                            <img src="<?= base_url('assets/img/uploaded/promo/') . $promo['poto']; ?>" class="card-img-top" alt="hotspromo">
+                    <div class="col-lg-6">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="<?= base_url('assets/img/uploaded/promo/') . $promo['poto']; ?>" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $promo['title']; ?></h5>
+                                        <p class="card-text"><?php echo $promo['paragraph']; ?></p>
+                                        <p class="card-text"><small class="text-muted"><?php echo $promo['caption']; ?></small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="card text-center" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="hotspromo">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $promo['title']; ?></h5>
-                                <p class="card-text"><?php echo $promo['paragraph']; ?></p>
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"></p>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><?php echo $promo['caption']; ?></li>
+                                <li class="list-group-item"></li>
                                 <li class="list-group-item">Periode : <?php echo $promo['periode']; ?></li>
                             </ul>
                             <div class="card-body">
@@ -105,10 +119,9 @@
                                     Updated : <?= $date; ?>
                                 </small>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 <?php endforeach; ?>
-
             </div>
 
 
@@ -248,28 +261,6 @@
     </div>
 </section>
 
-<section id="gallery">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="<?php echo base_url('assets/img/packages/IMG_1417-min.jpg') ?>" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?php echo base_url('assets/img/packages/IMG_1740-min.jpg') ?>" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?php echo base_url('assets/img/packages/IMG_4798-min.jpg') ?>" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="fasilitas">
     <div class="container">
 
@@ -397,119 +388,6 @@
             </div>
         </div>
 
-    </div>
-</section>
-
-<section id="testimoni" class="text-center">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-12 section-intro">
-                <h1>Testimonials</h1>
-                <div class="line-intro"></div>
-            </div>
-
-            <div class="col-lg-12">
-                <ul class="nav nav-pills mb-3  justify-content-lg-center justify-content-sm-center" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                            <img src="<?php echo base_url('assets/img/team/sonia.jpg'); ?>" alt="test-">
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                            <img src="<?php echo base_url('assets/img/team/raffi.png'); ?>" alt="test-">
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><img src="<?php echo base_url('assets/img/team/deddy.jpg'); ?>" alt="test-"></button>
-                    </li>
-
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-
-                        <div class="review">
-                            <div class="stars">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bx-star"></i>
-                            </div>
-                            <p class="lead">
-                                Tempatnya Menarik dan Cocok banget buat aku, aku suka banget.
-                            </p>
-                            <h5 class="title-sm mb-0">Sonia Basil</h5>
-                            <small>Baker</small>
-                        </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                        <div class="review">
-                            <div class="stars">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bx-star"></i>
-                            </div>
-                            <p class="lead">
-                                Untuk lokasi syuting OK banget sih, nuansa Eropa nya itu Lho ngena banget.
-                                nanti mau kesini lagi bareng istri dan anak.
-                            </p>
-                            <h5 class="title-sm mb-0">Raffi Ahmad</h5>
-                            <small>Aktor</small>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-                        <div class="review">
-                            <div class="stars">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bx-star"></i>
-                            </div>
-                            <p class="lead">
-                                Kaget sih, gw ga nyangka ada tempat sebagus ini, boleh sih ini buat tempat syuting podcast gw, supaya ada nuansa eropanya gitu. recomended banget sih.
-                            </p>
-                            <h5 class="title-sm mb-0">Deddy Corbuzier</h5>
-                            <small>YouTuber</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('http://localhost/devoyagebogor/assets/img/background/default-image.jpg'); background-size:cover; background-position:center; background-attachment: fixed;">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4">
-                <img src="<?php echo base_url('assets/img/background/IMG_0644-min.jpg'); ?>" alt="" class="img-thumbnail">
-            </div>
-            <div class="col-lg-6 offset-lg-1">
-                <form>
-                    <div class="mb-3">
-                        <small>Name</small>
-                        <input type="texxt" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
-                    </div>
-                    <div class="mb-3">
-                        <small>Email</small>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <small>Comment</small>
-                        <textarea name="comment" id="comment" cols="30" rows="4" class="form-control">
-
-                       </textarea>
-                    </div>
-                    <button type="submit" class="btn btn-brand">Submit</button>
-                </form>
-            </div>
-        </div>
     </div>
 </section>
 

@@ -34,8 +34,8 @@ class Development extends CI_Controller
 
 	/*
 		Set Up Promo's 			==>> DONE
-		Set Up Packages			==>> PENDING
-		Set Up Gallery's		==>> ...
+		Set Up Packages			==>> DONE
+		Set Up Gallery's		==>> Pending
 		Set Up Testimonial's	==>> ...
 		Set Up Service			==>> ...
 		Set Up Facilites		==>> ...
@@ -153,6 +153,7 @@ class Development extends CI_Controller
 		}
 	}
 
+	# Delete Package
 	public function d_Dpackages($id)
 	{
 		_in_System();
@@ -160,5 +161,24 @@ class Development extends CI_Controller
 		$Packages_D->d_app_package($id);
 		$this->session->set_flashdata('dev', '<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Delete Packages Success!</strong> You Can Add the new Package Again. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
 		redirect('development/project_web_devs_packages');
+	}
+
+	// Set Up Gallery's
+	public function dev_gallery()
+	{
+		_in_System();
+		// cek_add_product_promo();
+		if ($this->form_validation->run() == FALSE) {
+			$data['title'] = 'Web Application';
+			$this->load->view('templates/app/header_app', $data);
+			$this->load->view('templates/app/sidebar_app');
+			$this->load->view('development/app', $data);
+			$this->load->view('templates/app/footer_app');
+		} else {
+
+			// $this->devweb->add_apps_for_promo();
+			$this->session->set_flashdata('dev', '<div class="alert alert-success alert-dismissible fade show" role="alert"> <strong>Add New Promo Success!</strong> You Can Show This Promo From the Landing Web Page. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+			redirect('development/project_web_devs_review');
+		}
 	}
 }
